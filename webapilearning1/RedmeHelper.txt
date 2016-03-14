@@ -1,0 +1,2 @@
+﻿ http://techbrij.com/pass-parameters-aspdotnet-webapi-jquery
+ http://www.yearofmoo.com/2013/09/advanced-testing-and-debugging-in-angularjs.html
