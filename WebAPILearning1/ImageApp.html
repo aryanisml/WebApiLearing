@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+</head>
+<body>
+
+    <div>
+        <select id="machineSelection" style="width: 250px;">
+            <option value="11">A</option>
+            <option value="22">B</option>
+            <option value="33">C</option>
+            <option value="44">D</option>
+        </select>
+
+    </div>
+    <div id="information">
+        <label id="lblImageName"></label>
+    </div>
+    <div style="width: 600px;">
+        <img id="finalImage" src="*" alt="Demo" />
+
+    </div>
+
+
+</body>
+<script src="Scripts/jquery-1.8.2.js"></script>
+</html>
+<script>
+    $(document).ready(
+         function () {
+            
+             $("#machineSelection").change(function () {
+
+                 var uri = "http://localhost:7745/api/images";
+                 var selectedValue = $("#machineSelection").val();
+                 uri = uri + "/" + selectedValue;
+                 $.getJSON(uri).done(
+                     function (data)
+                     {
+                         
+                         $('#lblImageName').text(data.ImageSource);
+                        // $("#finalImage").add('src', data.ImageSource);
+
+                        }
+
+                 );
+
+                 
+             })
+             
+
+         }
+ );
+</script>
